@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔮 Vortex Engine Pro</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔮 Vortex Engine Pro</h1>
+            <p>Enterprise AI Video Automation</p>
+        </header>
+
+        <div class="card">
+            <h2>Create New Video</h2>
+            <div class="form-group">
+                <label>Prompt</label>
+                <textarea id="prompt" rows="3" placeholder="Describe your video..."></textarea>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Duration (sec)</label>
+                    <input type="number" id="duration" value="15" min="5" max="600">
+                </div>
+                <div class="form-group">
+                    <label>Video Type</label>
+                    <select id="videoType">
+                        <option value="shorts">Shorts (9:16)</option>
+                        <option value="long">Long (16:9)</option>
+                    </select>
+                </div>
+                <button id="generateBtn" class="btn-primary">⚡ Generate</button>
+            </div>
+            <div id="progressBox" style="display:none; margin-top:1rem;">
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+                <p id="progressText" style="margin-top:8px; font-size:0.9rem;"></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Your Videos</h2>
+            <table>
+                <thead>
+                    <tr><th>Prompt</th><th>Type</th><th>Dur</th><th>Status</th><th>Actions</th></tr>
+                </thead>
+                <tbody id="videoRows"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
